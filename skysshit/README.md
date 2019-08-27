@@ -1,0 +1,1 @@
+# discord-template-with-cogs
