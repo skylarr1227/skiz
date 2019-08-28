@@ -1,9 +1,14 @@
-from .core.dna import Bot
+#from .core.dna import Bot
+import asyncio
+import logging
+
+
 
 
 TOKEN = os.environ['TOKEN']
 
-
+#bot = self.bot()
+Bot = self.bot() 
 
 #@bot.event
 #async def on_ready():
