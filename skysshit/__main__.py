@@ -1,5 +1,10 @@
 from .core.dna import Bot
 
+
+TOKEN = os.environ['TOKEN']
+
+
+
 #@bot.event
 #async def on_ready():
 #    print('Logged in as')
