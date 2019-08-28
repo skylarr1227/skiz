@@ -12,4 +12,4 @@ class Bot(commands.Bot):
 		self.token = os.environ["TOKEN"]
 	
 	def run(self):
-		Bot.run(self.token)
+		self.run(self.token)
