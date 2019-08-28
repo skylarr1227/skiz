@@ -23,9 +23,7 @@ class Bot(commands.Bot):
 	def __init__(self, *args, **kwargs):
 		super().__init__(command_prefix="_", *args, **kwargs)
 		self.token = os.environ["TOKEN"]
-		self.extensions = []
-		for i in os.listdir("skysshit/cogs"):
-			self.extensions.append(i)
+		self.skybot_cogs = os.listdir("skysshit/cogs")
 	
 	async def load_extensions(self):
 		for ext in self.extensions:
