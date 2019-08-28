@@ -13,5 +13,4 @@ class Bot(commands.Bot):
 	
 	def run(self):
 		client = discord.Client()
-		self.token = os.environ["TOKEN"]
 		client.run(self.token)
