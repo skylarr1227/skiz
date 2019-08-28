@@ -8,12 +8,12 @@ import traceback
 import os
 from random import choice, randint
 
-@bot.event
-async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-    print(discord.utils.oauth_url(bot.user.id))
+#@bot.event
+#async def on_ready():
+#    print('Logged in as')
+#    print(bot.user.name)
+#    print(bot.user.id)
+#    print('------')
+#    print(discord.utils.oauth_url(bot.user.id))
 
 Bot().run()
