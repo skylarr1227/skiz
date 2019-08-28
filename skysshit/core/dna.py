@@ -1,5 +1,5 @@
 import os
-import discord
+import discord as discord
 from discord.ext import commands
 
 
