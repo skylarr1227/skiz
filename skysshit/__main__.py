@@ -3,8 +3,7 @@ import discord
 from discord.ext import commands
 import aiohttp
 import re
-from datetime 
-import timedelta
+from datetime import timedelta
 import traceback
 import os
 from random import choice, randint
