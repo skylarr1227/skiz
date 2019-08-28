@@ -7,8 +7,9 @@ import traceback
 import os
 from random import choice, randint 
 
-owner = ["Insert-Owner-ID"] 
- 
+owner = [""] 
+
+class Example(commands.Cog):
 
 @bot.event
 async def on_ready():
@@ -45,7 +46,7 @@ def send_cmd_help(ctx):
                                 color=discord.Color.blue())
             await bot.send_message(ctx.message.channel, embed=em)
 
-class Example(commands.Cog):
+
 	
 @commands.command(name='ping')
 async def ping_command(self, ctx):
