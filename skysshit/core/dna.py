@@ -23,6 +23,15 @@ class Bot(commands.Bot):
 	def __init__(self, *args, **kwargs):
 		super().__init__(command_prefix="_", *args, **kwargs)
 		self.token = os.environ["TOKEN"]
+		self.extensions = os.listdir("./cogs")
+	
+	async def load_extensions(self):
+		for ext in self.extensions:
+			self.load_extension(ext)
+		
+	async def on_ready(self):
+		print("Ready!")
+		await self.load_extensions()
 	
 	def run(self):
 		client = discord.Client()
