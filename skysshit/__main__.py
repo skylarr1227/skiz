@@ -1,4 +1,5 @@
-#from .core.dna import Bot
+"""
+from .core.dna import Bot
 import asyncio
 import logging
 import os
@@ -39,4 +40,8 @@ class Bot(commands.Bot):
  
 
 
+Bot().run()
+"""
+
+from .core import Bot
 Bot().run()
