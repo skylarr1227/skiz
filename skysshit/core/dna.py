@@ -15,7 +15,7 @@ class Bot(commands.Bot):
 		self.skybot_cogs = os.listdir("skysshit/cogs")
 	
 	async def load_extensions(self):
-		for ext in self.extensions:
+		for ext in self.skybot_cogs:
 			print("Loading %s" % ext)
 			self.load_extension(ext)
 			print("Loaded %s" % exit)
