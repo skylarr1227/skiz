@@ -9,14 +9,6 @@ from random import choice, randint
 
 class Bot(commands.Bot):
 
-@bot.event
-async def on_ready():
-    print('Logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print('------')
-    print(discord.utils.oauth_url(bot.user.id))
-
 	def __init__(self, *args, **kwargs):
 		super().__init__(command_prefix="_", *args, **kwargs)
 		self.token = os.environ["TOKEN"]
