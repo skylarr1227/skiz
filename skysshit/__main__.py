@@ -38,4 +38,4 @@ class Bot(commands.Bot):
  
 
 
-Bot().run()
+bot().run()
