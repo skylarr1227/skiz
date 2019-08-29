@@ -1,4 +1,4 @@
 # Bruh
 
-from .core import Bot
+from .core.dna import Bot
 Bot().run()
