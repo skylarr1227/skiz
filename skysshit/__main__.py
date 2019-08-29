@@ -9,7 +9,7 @@ import os
 TOKEN = os.environ['TOKEN']
 
 #bot = self.bot()
-#Bot = self.bot() 
+Bot = self.bot() 
 
 #@bot.event
 #async def on_ready(self):
