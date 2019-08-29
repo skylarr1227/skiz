@@ -17,7 +17,7 @@ class Bot(commands.Bot):
 	async def load_extensions(self):
 		for ext in self.skybot_cogs:
 			print("Loading %s" % ext)
-			self.load_extension(ext)
+			self.load_extension(f"skysshit.cogs.{ext[:-3]}")
 			print("Loaded %s" % exit)
 		
 	async def on_ready(self):
