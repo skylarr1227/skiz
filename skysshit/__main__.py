@@ -11,8 +11,8 @@ from discord.ext import commands
 TOKEN = os.environ['TOKEN']
 
 class Bot(commands.Bot):
-def __init__(self, *args, **kwargs):
-	super().__init__(command_prefix="_", *args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(command_prefix="_", *args, **kwargs)
 	self.token = os.environ["TOKEN"]
 	self.skybot_cogs = os.listdir("skysshit/cogs")
 	
