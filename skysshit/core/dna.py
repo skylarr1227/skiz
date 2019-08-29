@@ -31,5 +31,4 @@ async def on_ready():
 		await self.load_extensions()
 	
 	def run(self):
-		client = discord.Client()
-		client.run(self.token)
+		super().run(self.token)
