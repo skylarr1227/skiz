@@ -12,7 +12,8 @@ TOKEN = os.environ['TOKEN']
 
 class Bot(commands.Bot):
     def __init__(self, bot):
-        self.bot = bot
+        self.bot = Bot
+        Bot=self.bot
         self.count=0
 
 
@@ -38,4 +39,4 @@ class Bot(commands.Bot):
  
 
 
-bot().run()
+Bot().run()
