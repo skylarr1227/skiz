@@ -15,7 +15,8 @@ class Bot(commands.Bot):
         super().__init__(command_prefix="_", *args, **kwargs)
         self.token = os.environ["TOKEN"]
         self.skybot_cogs = os.listdir("skysshit/cogs")
-	Bot = self.bot()
+
+Bot = self.bot()
 
 #bot = self.bot()
 
