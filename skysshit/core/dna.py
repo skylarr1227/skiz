@@ -16,7 +16,9 @@ class Bot(commands.Bot):
 	
 	async def load_extensions(self):
 		for ext in self.extensions:
+			print("Loading %s" % ext)
 			self.load_extension(ext)
+			print("Loaded %s" % exit)
 		
 	async def on_ready(self):
 		print("Ready!")
