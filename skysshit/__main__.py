@@ -6,19 +6,18 @@ import discord
 from discord.ext import commands
 
 
-
+Bot = self.bot() 
 
 TOKEN = os.environ['TOKEN']
 
 class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
-    super().__init__(command_prefix="_", *args, **kwargs)
-    self.token = os.environ["TOKEN"]
-    self.skybot_cogs = os.listdir("skysshit/cogs")
+        super().__init__(command_prefix="_", *args, **kwargs)
+        self.token = os.environ["TOKEN"]
+        self.skybot_cogs = os.listdir("skysshit/cogs")
 	
 
 #bot = self.bot()
-Bot = self.bot() 
 
 #@bot.event
 #async def on_ready(self):
