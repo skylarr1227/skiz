@@ -9,10 +9,10 @@ import os
 TOKEN = os.environ['TOKEN']
 
 #bot = self.bot()
-Bot = self.bot() 
+#Bot = self.bot() 
 
 #@bot.event
-#async def on_ready():
+#async def on_ready(self):
 #    print('Logged in as')
 #    print(bot.user.name)
 #    print(bot.user.id)
@@ -20,7 +20,7 @@ Bot = self.bot()
 #    print(discord.utils.oauth_url(bot.user.id))
 
 #@bot.command () 
-#async def load ( extension_name : str ): 
+#sync def load ( extension_name : str ): 
 #    """ Loads an extension. """ 
 #    try : 
 #        bot.load_extension(extension_name) 
