@@ -40,7 +40,7 @@ class Modules:
 
 	@module.command()
 	async def load(self, ctx, *, cog: str):
-        """Load a Module."""
+	"""Load a Module."""
         	try:
         	self.bot.load_extension(f'modules.{cog}')
         	except Exception as e:
@@ -49,9 +49,10 @@ class Modules:
         	await ctx.send(embed=Embed(title=f'\u2705 **`SUCCESS`**: Addon "{str.title(cog)}" loaded',
                                        colour=0x187E03))
 
-    	@module.command()
-    	async def unload(self, ctx, *, cog: str):
-        """Unload a Module."""
+		
+	@module.command()
+	async def unload(self, ctx, *, cog: str):
+ 	"""Unload a Module."""
 		try:
         	self.bot.unload_extension(f'modules.{cog}')
 		except Exception as e:
