@@ -4,12 +4,11 @@ from discord.ext import commands
 from libneko import pag
 # Read the dummy text in.
 
-class Libneko(commands.Cog):
-    #def __init__(self)
-    #def __init__(self)
-    with open('dummy-text.txt') as fp:
-        dummy_text = fp.read()
 
+with open('/dummy-text.txt') as fp:
+dummy_text = fp.read()
+
+class Libneko(commands.Cog):
     @commands.command()
     async def test(ctx):
         """We will be coding in here in the next part."""
