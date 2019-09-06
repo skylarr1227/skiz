@@ -12,20 +12,21 @@ path = ''
 class Embed(commands.Cog):
         def __init__(self, bot): #client = Bot
 
-@commands.command(name = "embed",
-        brief = "Does embedding.",
-        aliases = ["e"],
-        description = "Embeds guilds for Dream's sake. Note 'embedDesc' is optional. Requires permission 'manage_messages' to be used.",
-        pass_context = True)
-@commands.has_permissions(manage_messages = True)
-async def embed(ctx, sendToChannel: discord.TextChannel, embedTitle, embedInvite, embedImage, gwCode, embedDesc = None):
-        embed = discord.Embed(color = 0x36393E)
-embed.set_image(url = embedImage)
-embed.add_field(name = "Guild Name", value = embedTitle, inline = True)
-embed.add_field(name = "Link", value = embedInvite, inline = True)
+                
+        @commands.command(name = "embed",
+                brief = "Does embedding.",
+                aliases = ["e"],
+                description = "Embeds guilds for Dream's sake. Note 'embedDesc' is optional. Requires permission 'manage_messages' to be used.",
+                pass_context = True)
+        @commands.has_permissions(manage_messages = True)
+                async def embed(ctx, sendToChannel: discord.TextChannel, embedTitle, embedInvite, embedImage, gwCode, embedDesc = None):
+                        embed = discord.Embed(color = 0x36393E)
+                embed.set_image(url = embedImage)
+                embed.add_field(name = "Guild Name", value = embedTitle, inline = True)
+                embed.add_field(name = "Link", value = embedInvite, inline = True)
 
-if embedDesc != None:
-        embed.add_field(name = "Description", value = embedDesc, inline = False)
+        if embedDesc != None:
+                embed.add_field(name = "Description", value = embedDesc, inline = False)
 
 newSpace = "\n"
 
