@@ -3,8 +3,8 @@ from discord.ext import commands
 from discord.ext.commands import is_owner
 
 
-class Modules:
-    def __init__(self, bot: commands.Bot):
+class Modules(commands.Cog):
+    def __init__(self, bot):
         self.bot = bot
         print('Addon "{}" loaded'.format(self.__class__.__name__))
 
