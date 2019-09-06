@@ -39,7 +39,7 @@ class Modules:
                         	f"Reloads a Module"))
 
 	@module.command()
-    	async def load(self, ctx, *, cog: str):
+	async def load(self, ctx, *, cog: str):
         """Load a Module."""
         	try:
         	self.bot.load_extension(f'modules.{cog}')
