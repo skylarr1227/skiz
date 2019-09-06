@@ -74,9 +74,9 @@ class Modules:
                                              f'reloaded', colour=0x187E03))
 	
 		
-	async def on_ready(self):
-		print("Ready!")
-		await self.load_extensions()
+     async def on_ready(self):
+	    print("Ready!")
+	    await self.load_extensions()
 	
-	def run(self):
-		super().run(self.token)
+     def run(self):
+	    super().run(self.token)
