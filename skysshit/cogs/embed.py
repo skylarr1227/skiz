@@ -9,7 +9,6 @@ from discord.ext import commands
 #client = Bot
 path = ''
 
-class 
 class Embed(commands.Cog):
     def __init__(self, bot):
         #client = Bot
