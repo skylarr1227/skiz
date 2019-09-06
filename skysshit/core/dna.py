@@ -27,8 +27,8 @@ class Modules:
 	@commands.group(hidden=True)
 	@is_owner()
 	async def module(self, ctx):
-        	if ctx.invoked_subcommand is None:
-        	await ctx.send(embed=Embed(title="Module Commands", color=0x9b006f,
+        if ctx.invoked_subcommand is None:
+       		await ctx.send(embed=Embed(title="Module Commands", color=0x9b006f,
                 	description=f"There are actually 3 Commands to use.\n "
                         	f"All Commands in this Group are Bot-Owner only!\n\n"
                         	f"{ctx.prefix}module load <ModuleName> || "
