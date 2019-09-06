@@ -116,3 +116,6 @@ class Navigator:
     @classmethod
     def from_context(cls, ctx, pages, **kwargs):
         return cls(kwargs.pop("title", ""), ctx.bot, ctx.channel, ctx.author, pages, **kwargs)
+
+def setup(bot):
+	bot.add_cog(Navigator())
