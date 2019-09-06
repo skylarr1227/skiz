@@ -1,7 +1,11 @@
+from discord import Embed
+from discord.ext import commands
+from discord.ext.commands import is_owner
+
 class Modules(commands.Cog):
     def __init__(self, bot):
     self.bot = bot
-print('Addon "{}" loaded'.format(self.__class__.__name__))
+    print('Addon "{}" loaded'.format(self.__class__.__name__))
 
 @commands.group(hidden = True)
 @is_owner()
