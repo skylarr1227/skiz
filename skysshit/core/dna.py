@@ -40,7 +40,7 @@ class Modules:
 
 	@module.command()
 	async def load(self, ctx, *, cog: str):
-	"""Load a Module."""
+		"""Load a Module."""
         	try:
         	self.bot.load_extension(f'modules.{cog}')
         	except Exception as e:
@@ -52,7 +52,7 @@ class Modules:
 		
 	@module.command()
 	async def unload(self, ctx, *, cog: str):
- 	"""Unload a Module."""
+ 		"""Unload a Module."""
 		try:
         	self.bot.unload_extension(f'modules.{cog}')
 		except Exception as e:
@@ -63,7 +63,7 @@ class Modules:
 
 	@module.command()
 	async def reload(self, ctx, *, cog: str):
-	"""Reload a Module."""
+		"""Reload a Module."""
 		try:
         	self.bot.unload_extension(f'modules.{cog}')
         	self.bot.load_extension(f'modules.{cog}')
