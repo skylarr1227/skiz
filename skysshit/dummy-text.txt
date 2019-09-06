@@ -1,0 +1,21 @@
+So, we are going to be using dummy-text.txt in our 
+examples from now on. I will assume you have 
+downloaded it, and put it in your current working 
+directory with your other files, and called     
+it dummy-text.txt.
+
+I will then assume that you have at some point opened the file in Python, and read the file contents 
+into a variable that we can use later, 
+called dummy_text. I will also make the assumption 
+you have a basic bot working. If you are still new to 
+this, then here is a little framework to get you started. 
+I am not going to teach how to use Discord.py’s rewrite here, so this is all you are going to get on it:
+
+Factories
+
+First steps
+
+We are going to introduce the factory classes first. These are your quick, dirty, simple-looking classes that usually do everything you want if you are in a rush. I will assume you know Python, and how to use Discord.py rewrite. If the following example scares you, I urge you learn to walk before you can run. It will save both of us the frustration. Trust me.
+
+So lets first try sending the text in the simplest way possible, remembering we are now working in a command coroutine function (an async def with the @commanddecorator applied to it):
+
