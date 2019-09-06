@@ -38,37 +38,37 @@ class Modules:
                         	f"{ctx.prefix}module load <ModuleName> || "
                         	f"Reloads a Module"))
 
-    	@module.command()
+	@module.command()
     	async def load(self, ctx, *, cog: str):
         """Load a Module."""
-        try:
+        	try:
         	self.bot.load_extension(f'modules.{cog}')
-        except Exception as e:
+        	except Exception as e:
         	await ctx.send(embed=Embed(description='**`ERROR:`** {} - {}'.format(type(e).__name__, e)))
-        else:
+        	else:
         	await ctx.send(embed=Embed(title=f'\u2705 **`SUCCESS`**: Addon "{str.title(cog)}" loaded',
                                        colour=0x187E03))
 
     	@module.command()
     	async def unload(self, ctx, *, cog: str):
         """Unload a Module."""
-	try:
+		try:
         	self.bot.unload_extension(f'modules.{cog}')
-	except Exception as e:
+		except Exception as e:
         	await ctx.send(embed=Embed(description='**`ERROR:`** {} - {}'.format(type(e).__name__, e)))
-	else:
+		else:
         	await ctx.send(embed=Embed(title=f'\u2705 **`SUCCESS`**: Addon "{str.title(cog)}" unloaded',
                                        colour=0x187E03))
 
 	@module.command()
 	async def reload(self, ctx, *, cog: str):
 	"""Reload a Module."""
-	try:
+		try:
         	self.bot.unload_extension(f'modules.{cog}')
         	self.bot.load_extension(f'modules.{cog}')
-	except Exception as e:
+		except Exception as e:
         	await ctx.send(embed=Embed(description='**`ERROR:`** {} - {}'.format(type(e).__name__, e)))
-	else:
+		else:
         	await ctx.send(embed=Embed(title=f'\u2705 **`SUCCESS`**: Addon "{str.title(cog)}" '
                                          f'reloaded', colour=0x187E03))
 	
