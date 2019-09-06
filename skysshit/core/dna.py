@@ -42,11 +42,11 @@ class Modules:
 	async def load(self, ctx, *, cog: str):
 		"""Load a Module."""
         	try:
-        	self.bot.load_extension(f'modules.{cog}')
+        		self.bot.load_extension(f'modules.{cog}')
         	except Exception as e:
-        	await ctx.send(embed=Embed(description='**`ERROR:`** {} - {}'.format(type(e).__name__, e)))
+        		await ctx.send(embed=Embed(description='**`ERROR:`** {} - {}'.format(type(e).__name__, e)))
         	else:
-        	await ctx.send(embed=Embed(title=f'\u2705 **`SUCCESS`**: Addon "{str.title(cog)}" loaded',
+        		await ctx.send(embed=Embed(title=f'\u2705 **`SUCCESS`**: Addon "{str.title(cog)}" loaded',
                                        colour=0x187E03))
 
 		
