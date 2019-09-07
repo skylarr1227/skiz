@@ -26,8 +26,7 @@ class Show(commands.Cog):
         embed = discord.Embed(title="Command Shortcuts", description="Custom shortcuts to make long/difficult commands easier (Always growing list, will try to update often) feel free to send suggestions in dm to the bot, they do get checked.", color=0x0084FD)
         embed.add_field(name="will add soon", value="``will add soon``", inline=False)
         embed.add_field(name="Work in progress", value="will add soon")
-        
-await ctx.send(embed=embed)
+        await ctx.send(embed=embed)
 
     @show.command()
     async def leveler(self, ctx):
