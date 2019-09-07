@@ -26,7 +26,8 @@ class Show(commands.Cog):
         embed = discord.Embed(title="Command Shortcuts", description="Custom shortcuts to make long/difficult commands easier (Always growing list, will try to update often) feel free to send suggestions in dm to the bot, they do get checked.", color=0x0084FD)
         embed.add_field(name="will add soon", value="``will add soon``", inline=False)
         embed.add_field(name="Work in progress", value="will add soon")
-        await ctx.send(embed=embed)
+        
+await ctx.send(embed=embed)
 
     @show.command()
     async def leveler(self, ctx):
@@ -36,8 +37,17 @@ class Show(commands.Cog):
         embed.add_field(name="User LeveUP Display Background", value="``+lvlset levelup bg <bg name>`` - Change your level up bg (background name).", inline=False)
         embed.add_field(name="View Available Backgrounds", value="``+backgrounds profile | rank | levelup`` -  Use displayed name for the background", inline=False)
         await ctx.send(embed=embed)    
-    
-   # @help.command()
+ 
+    @show.command()
+    async def bracket(self, ctx):
+        embed = discord.Embed(title="MEWBOT TOURNAMENT BRACKET", description="Live and up to date bracket Refreshed when command is run- every time", color=0x0084FD)
+        embed.add_field(name="Idea planned here", value="``Find out how to make the winners show in fields for each round`` <3 the challonge api would def support it", inline=False)
+        embed.set_image(url="https://challonge.com/Mewbottrials.svg")
+        embed.set_thumbnail(url='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTj0hs_Ez3iUEE_an9vvDprmW6IZXJzrpX7st_fE03_6xxsAdxc')
+        await ctx.send(embed=embed)
+  
+
+#@help.command()
    # async def shop(self, ctx):
       #  embed = discord.Embed(title="RealmBot Store Help", description="Help with store options, ``r.store`` also works in place of ``r.shop``.", color=0x0084FD)
       #  embed.add_field(name="Character Shop", value="``r.shop char`` - Different summoning options for new characters!", inline=False)
