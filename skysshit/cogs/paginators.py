@@ -5,7 +5,7 @@ import re
 import discord
 from discord.ext import commands
 
-from jishaku.hljs import get_language
+from skysshit.hljs import get_language
 
 __all__ = ('EmojiSettings', 'PaginatorInterface', 'PaginatorEmbedInterface',
            'WrappedPaginator', 'FilePaginator')
