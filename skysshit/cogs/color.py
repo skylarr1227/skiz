@@ -1,3 +1,11 @@
+import discord
+from discord.ext import commands
+import textwrap
+
+
+class Color(commands.Cog):
+
+
 def color(self, ctx, role: discord.Role, value: discord.Colour):
         """Edits a role's color
 
