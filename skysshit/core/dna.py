@@ -78,37 +78,17 @@ class Bot(commands.Bot):
             await self.wait_until_ready()
             self.browser = await launch(args=["--no-sandbox"], headless=True)
             self.browser_page = await self.browser.newPage()
-
-    # noinspection PyProtectedMember
-        #async def close(self):
-#"""Function called when closing the bot"""
-            #try:
-                #await self.browser_page.close() or self.logger.info("Browser page successfully closed!")
-        #except (errors.PageError, AttributeError):  # browser was never created; edge case
-            #pass
-       # await self.browser.close() or self.logger.info("Browser successfully closed!")
-        #await super().close()
-       # await self.http._session.close()
-       # await self.session.close()
-       # for logger in self.loggers:
-           # for handler in logger.handlers:
-               #logger.removeHandler(handler)
-
-
-
-
-
-	async def load_extensions(self):
-		for ext in self.skybot_cogs:
-			print("Loading %s" % ext)
-			self.load_extension(f"skysshit.cogs.{ext[:-3]}")
-			print("Loaded %s" % exit)
-
-	#async def on_ready(self):
-	       # print("Ready!")
-	       # await self.load_extensions()
-	
-	def run(self):
-	        super().run(self.token)
-
-
+            
+        async def load_extensions(self):
+            for ext in self.skybot_cogs:
+                print("Loading %s" % ext)
+                self.load_extension(f"skysshit.cogs.{ext[:-3]}")
+                print("Loaded %s" % exit)
+                
+                
+        def run(self):
+            super().run(self.token)
+            
+        async def on_ready(self):
+            print("Ready!")
+            await self.load_extensions(
