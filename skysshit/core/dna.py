@@ -86,9 +86,22 @@ class Bot(commands.Bot):
                 print("Loaded %s" % exit)
                 
                 
-        def run(self):
-            super().run(self.token)
-            
+
         async def on_ready(self):
             print("Ready!")
-            await self.load_extensions(
+            await self.load_extensions()
+		
+		def run(self):
+            super().run(self.token)
+                
+		    
+	
+	
+	
+	
+	
+	
+	
+	
+
+		    
