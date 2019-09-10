@@ -8,7 +8,7 @@ from discord.ext import commands
 from raven import Client
 
 #from .core.dna import Bot
-from bot.utils import checks
+from .skysshit.utils import checks
 
 
 class Core:
