@@ -25,8 +25,8 @@ discord.abc.Messageable.send = send
 class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(command_prefix="_", *args, **kwargs)
-	self.token = os.environ["TOKEN"]
-	self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
+        self.token = os.environ["TOKEN"]
+        self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
 	       # self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent"=self.http.user_agent)
                 #self.browser_page = None
              #   self.browser = self.loop.create_task(self.create_browser())
@@ -59,40 +59,40 @@ class Bot(commands.Bot):
         # make sure to only print ready text once
         self._loaded = False
         async def on_ready(self):
-        """Function called when bot is ready or resumed"""
-        if self._loaded is False:
-            end_time = time.time() - self.start_time
-            self.app_info = await self.application_info()
-            self.logger.info(f"Loaded Bot:")
-            self.logger.info(f"Logged in as {self.user}")
-            self.logger.info(f"ID is {self.user.id}")
-            self.logger.info(f"Owned by {self.app_info.owner}")
-            self.description = f"Hello, this is the help menu for {self.user.name}!"
-            self.logger.info(f"Bot started in {end_time} seconds")
-            self._loaded = True
+            """Function called when bot is ready or resumed"""
+            if self._loaded is False:
+                end_time = time.time() - self.start_time
+                self.app_info = await self.application_info()
+                self.logger.info(f"Loaded Bot:")
+                self.logger.info(f"Logged in as {self.user}")
+                self.logger.info(f"ID is {self.user.id}")
+                self.logger.info(f"Owned by {self.app_info.owner}")
+                self.description = f"Hello, this is the help menu for {self.user.name}!"
+                self.logger.info(f"Bot started in {end_time} seconds")
+                self._loaded = True
         print("Ready!")
-	    await self.load_extensions()
+        #await self.load_extensions()
 
         async def create_browser(self):
-        """Task to create browser for scraping purposes."""
+            """Task to create browser for scraping purposes."""
             await self.wait_until_ready()
             self.browser = await launch(args=["--no-sandbox"], headless=True)
             self.browser_page = await self.browser.newPage()
 
     # noinspection PyProtectedMember
-        async def close(self):
-        """Function called when closing the bot"""
-            try:
-                await self.browser_page.close() or self.logger.info("Browser page successfully closed!")
-        except (errors.PageError, AttributeError):  # browser was never created; edge case
-            pass
-        await self.browser.close() or self.logger.info("Browser successfully closed!")
-        await super().close()
-        await self.http._session.close()
-        await self.session.close()
-        for logger in self.loggers:
-            for handler in logger.handlers:
-                logger.removeHandler(handler)
+        #async def close(self):
+#"""Function called when closing the bot"""
+            #try:
+                #await self.browser_page.close() or self.logger.info("Browser page successfully closed!")
+        #except (errors.PageError, AttributeError):  # browser was never created; edge case
+            #pass
+       # await self.browser.close() or self.logger.info("Browser successfully closed!")
+        #await super().close()
+       # await self.http._session.close()
+       # await self.session.close()
+       # for logger in self.loggers:
+           # for handler in logger.handlers:
+               #logger.removeHandler(handler)
 
 
 
