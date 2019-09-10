@@ -10,7 +10,7 @@ from contextlib import redirect_stdout
 import discord
 from discord.ext import commands
 
-from bot.main import Bot
+from .core.dna import Bot
 
 
 # noinspection PyBroadException,PyBroadException,PyBroadException,PyBroadException,PyBroadException,PyBroadException
