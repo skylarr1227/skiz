@@ -30,7 +30,7 @@ class Bot(commands.Bot):
 	
 
 
-self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent": self.http.user_agent})
+        self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent": self.http.user_agent})
         self.browser_page = None
         self.browser = self.loop.create_task(self.create_browser())
         self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
