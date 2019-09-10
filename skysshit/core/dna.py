@@ -92,4 +92,4 @@ class Bot(commands.Bot):
             await self.load_extensions()
 	 
             def run(self):
-            super().run(self.token)
+                super().run(self.token)
