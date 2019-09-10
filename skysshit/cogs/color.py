@@ -5,7 +5,7 @@ import textwrap
 
 class Color(commands.Cog):
 
-
+@commands.command()
 def color(self, ctx, role: discord.Role, value: discord.Colour):
         """Edits a role's color
 
@@ -26,3 +26,8 @@ def color(self, ctx, role: discord.Role, value: discord.Colour):
         except Exception as e:
             print(e)
             await self.bot.say("Something fucked up... can we do it right next time maybe?") 
+
+
+
+def setup(bot):
+    bot.add_cog(Color(bot))
