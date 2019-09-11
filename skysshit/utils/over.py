@@ -43,37 +43,37 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
         To change the behaviour, this method should be overridden.
 
         Returns
-        --------
+        -------
         list
             A paginated output of the help command.
         """
-        self._paginator = Paginator()
+        #self._paginator = Paginator()
 
         # we need a padding of ~80 or so
 
-        description = self.command.description if not self.is_cog() else inspect.getdoc(self.command)
+        #description = self.command.description if not self.is_cog() else inspect.getdoc(self.command)
 
-        if description:
+        #if description:
             # <description> portion
-            self._paginator.add_line(description, empty=True)
+            #self._paginator.add_line(description, empty=True)
 
-        if isinstance(self.command, Command):
+       # if isinstance(self.command, Command):
             # <signature portion>
-            if self.command.params.get("args", None) and type(self.command.params['args'].annotation) == ArgPC:
-                self.command.usage = create_help(self.command, self.command.params['args'].annotation.parser)
-            signature = self.get_command_signature()
-            self._paginator.add_line(signature, empty=True)
+            #if self.command.params.get("args", None) and type(self.command.params['args'].annotation) == ArgPC:
+                #elf.command.usage = create_help(self.command, self.command.params['args'].annotation.parser)
+            #signature = self.get_command_signature()
+            #self._paginator.add_line(signature, empty=True)
 
             # <long doc> section
-            if self.command.help:
-                self._paginator.add_line(self.command.help, empty=True)
+            #if self.command.help:
+                #self._paginator.add_line(self.command.help, empty=True)
 
             # end it here if it's just a regular command
-            if not self.has_subcommands():
-                self._paginator.close_page()
-                return self._paginator.pages
+           # if not self.has_subcommands():
+              ##  self._paginator.close_page()
+              #  return self._paginator.pages
 
-        max_width = self.max_name_size
+      #  max_width = self.max_name_size
 
     #    def category(tup):
      #       """Splits the help command into categories for easier readability"""
@@ -83,42 +83,4 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
          #   return cog + ':' if cog is not None else '\u200bNo Category:'
 
        # filtered = await self.filter_command_list()
-       # if self.is_bot():
-        #    data = sorted(filtered, key=category)
-            #for category, commands in itertools.groupby(data, key=category):
-                # there simply is no prettier way of doing this.
-               # commands = sorted(commands)
-                #if len(commands) > 0:
-                   # self._paginator.add_line(category)
-                    #self._add_subcommands_to_page(max_width, commands)
-        #else:
-           # filtered = sorted(filtered)
-            #if filtered:
-                #self._paginator.add_line('Commands:')
-                #self._add_subcommands_to_page(max_width, filtered)
-
-        #add the ending note
-        #self._paginator.add_line()
-        #ending_note = self.get_ending_note()
-        #self._paginator.add_line(ending_note)
-        #return self._paginator.pages
-
-
-old_send = discord.abc.Messageable.send
-
-
-async def send(self, content=None, **kwargs):
-    """Overrides default send method in order to create a paste if the response is more than 2000 characters"""
-    if content is not None and any(x in str(content) for x in ["@everyone", "@here"]):
-        content = content.replace("@everyone", "@\u0435veryone").replace("@here", "@h\u0435re")
-    if content is not None and len(str(content)) > 2000:
-        if content.startswith("```py"):
-            content = "\n".join(content.split("\n")[1:-1])
-        paste = await privatebin.upload(content, expires="15min", server=self.bot.priv)
-        if self.bot.polr:
-            paste = await polr.shorten(paste, **self.bot.polr)
-        return await old_send(self, f"Hey, I couldn't handle all the text I was gonna send you, so I put it in a paste!"
-                                    f"\nThe link is **{paste}**, but it expires in 15 minutes, so get it quick!",
-                              **kwargs)
-    else:
-        return await old_send(self, content, **kwargs)
+       # if self.i = sorted(filtered✴️✴️✴️
