@@ -6,9 +6,8 @@ import io
 import itertools
 
 import discord
-#from discord.ext.commands import HelpFormatter as HelpF, Paginator, Command
+from discord.ext.commands import Bot, HelpFormatter.
 from skysshit.utils import polr, privatebin
-
 from skysshit.utils.args import ArgParseConverter as ArgPC
 
 
@@ -31,7 +30,7 @@ def create_help(cmd, parser):
     return cmd.usage
 
 
-class HelpFormatter(HelpF):
+class MyFormatter(HelpFormatter):
     """Custom override for the default help command"""
 
     def __init__(self, *args, **kwargs):
