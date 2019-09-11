@@ -26,12 +26,13 @@ class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(command_prefix="_", *args, **kwargs)
         self.token = os.environ["TOKEN"]
+        bot.remove_command('help')
         self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
 	       # self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent"=self.http.user_agent)
                 #self.browser_page = None
              #   self.browser = self.loop.create_task(self.create_browser())
-               # self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
-               # self.polr = self.config['extras'].get('polr', None)
+        self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
+        self.polr = self.config['extras'].get('polr', None)
 #
         self.commands_used = Counter()
         self.commands_used_in = Counter()
@@ -71,13 +72,13 @@ class Bot(commands.Bot):
                 self.logger.info(f"Bot started in {end_time} seconds")
                 self._loaded = True
         print("Ready!")
-        #await self.load_extensions()
+        await self.load_extensions()
 
         async def create_browser(self):
             """Task to create browser for scraping purposes."""
             await self.wait_until_ready()
-            self.browser = await launch(args=["--no-sandbox"], headless=True)
-            self.browser_page = await self.browser.newPage()
+            #self.browser = await launch(args=["--no-sandbox"], headless=True)
+            #self.browser_page = await self.browser.newPage()
             
         async def load_extensions(self):
             for ext in self.skybot_cogs:
