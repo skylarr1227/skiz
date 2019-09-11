@@ -45,7 +45,7 @@ class Bot(commands.Bot):
         self.loggers = [discord_logger, self.logger, self.command_logger]
 
       
-  _modules = [mod.stem for mod in Path("skysshit/cogs").glob("*.py")]
+#  _modules = [mod.stem for mod in Path("skysshit/cogs").glob("*.py")]
         #self.load_extension(f"skysshit.cogs.core")
         #self.load_extension(f"skysshit.cogs.owner")
        # if 'bare' in kwargs.pop('argv'):  # load the bot bare-bones to diagnose issues
