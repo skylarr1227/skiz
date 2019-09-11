@@ -19,7 +19,7 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
 
 #discord.abc.Messageable.send = send
 
-token = os.environ.get["TOKEN"]
+#token = os.environ.get["TOKEN"]
 
 
 class Bot(commands.Bot):
