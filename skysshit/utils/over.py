@@ -11,34 +11,34 @@ from skysshit.utils import polr, privatebin
 from skysshit.utils.args import ArgParseConverter as ArgPC
 
 
-def create_help(cmd, parser):
-    """Creates an updated usage for the help command"""
-    default = cmd.params['args'].default
-    if cmd.signature.split("[")[-1] == f"args={default}]" if default else "args]":
-        sio = io.StringIO()
-        with contextlib.redirect_stdout(sio):
-            parser.print_help()
-        sio.seek(0)
-        s = sio.read()
+#def create_help(cmd, parser):
+ #   """Creates an updated usage for the help command"""
+  #  default = cmd.params['args'].default
+    #if cmd.signature.split("[")[-1] == f"args={default}]" if default else "args]":
+   #     sio = io.StringIO()
+  #      with contextlib.redirect_stdout(sio):
+    #        parser.print_help()
+   #     sio.seek(0)
+    #    s = sio.read()
         # Strip the filename and trailing newline from help text
-        arg_part = s[(len(str(s[7:]).split()[0]) + 8):-1]
-        k = cmd.qualified_name
-        spt = len(k.split())
+    #    arg_part = s[(len(str(s[7:]).split()[0]) + 8):-1]
+    #    k = cmd.qualified_name
+    #    spt = len(k.split())
         # Remove a duplicate command name + leading arguments
-        split_sig = cmd.signature.split()[spt:]
-        return "[".join((" ".join(split_sig)).split("[")[:-1]) + arg_part
-    return cmd.usage
+     #   split_sig = cmd.signature.split()[spt:]
+    #    return "[".join((" ".join(split_sig)).split("[")[:-1]) + arg_part
+  #  return cmd.usage
 
 
-class MyFormatter(HelpFormatter):
-    """Custom override for the default help command"""
+#class MyFormatter(HelpFormatter):
+   # """Custom override for the default help command"""
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._paginator = None
+   # def __init__(self, *args, **kwargs):
+  #      super().__init__(*args, **kwargs)
+      #  self._paginator = None
 
-    async def format(self):
-        """Handles the actual behaviour involved with formatting.
+   # async def format(self):
+    #    """Handles the actual behaviour involved with formatting.
 
         To change the behaviour, this method should be overridden.
 
@@ -75,34 +75,33 @@ class MyFormatter(HelpFormatter):
 
         max_width = self.max_name_size
 
-        def category(tup):
-            """Splits the help command into categories for easier readability"""
-            cog = tup[1].cog_name
+    #    def category(tup):
+     #       """Splits the help command into categories for easier readability"""
+      #      cog = tup[1].cog_name
             # we insert the zero width space there to give it approximate
             # last place sorting position.
-            return cog + ':' if cog is not None else '\u200bNo Category:'
+         #   return cog + ':' if cog is not None else '\u200bNo Category:'
 
-        filtered = await self.filter_command_list()
-        if self.is_bot():
-            data = sorted(filtered, key=category)
-            for category, commands in itertools.groupby(data, key=category):
+       # filtered = await self.filter_command_list()
+       # if self.is_bot():
+        #    data = sorted(filtered, key=category)
+            #for category, commands in itertools.groupby(data, key=category):
                 # there simply is no prettier way of doing this.
-                commands = sorted(commands)
-                if len(commands) > 0:
-                    self._paginator.add_line(category)
+               # commands = sorted(commands)
+                #if len(commands) > 0:
+                   # self._paginator.add_line(category)
+                    #self._add_subcommands_to_page(max_width, commands)
+        #else:
+           # filtered = sorted(filtered)
+            #if filtered:
+                #self._paginator.add_line('Commands:')
+                #self._add_subcommands_to_page(max_width, filtered)
 
-                self._add_subcommands_to_page(max_width, commands)
-        else:
-            filtered = sorted(filtered)
-            if filtered:
-                self._paginator.add_line('Commands:')
-                self._add_subcommands_to_page(max_width, filtered)
-
-        # add the ending note
-        self._paginator.add_line()
-        ending_note = self.get_ending_note()
-        self._paginator.add_line(ending_note)
-        return self._paginator.pages
+        #add the ending note
+        #self._paginator.add_line()
+        #ending_note = self.get_ending_note()
+        #self._paginator.add_line(ending_note)
+        #return self._paginator.pages
 
 
 old_send = discord.abc.Messageable.send
