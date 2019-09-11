@@ -44,18 +44,19 @@ class Bot(commands.Bot):
         self.command_logger = setup_logger("Commands")
         self.loggers = [discord_logger, self.logger, self.command_logger]
 
-        _modules = [mod.stem for mod in Path("skysshit/cogs").glob("*.py")]
-        self.load_extension(f"skysshit.cogs.core")
-        self.load_extension(f"skysshit.cogs.owner")
-        if 'bare' in kwargs.pop('argv'):  # load the bot bare-bones to diagnose issues
-            return
-        for module in _modules:
-            try:
-                if module in ['core', 'errors']:
-                    pass
-                self.load_extension(f"skysshit.cogs.{module}")
-            except discord.DiscordException as exc:
-                self.logger.error(f"{type(exc).__name__} occurred when loading {module}: {exc}")
+      
+  _modules = [mod.stem for mod in Path("skysshit/cogs").glob("*.py")]
+        #self.load_extension(f"skysshit.cogs.core")
+        #self.load_extension(f"skysshit.cogs.owner")
+       # if 'bare' in kwargs.pop('argv'):  # load the bot bare-bones to diagnose issues
+         #   return
+        #for module in _modules:
+          #  try:
+             #   if module in ['core', 'errors']:
+                #    pass
+                #self.load_extension(f"skysshit.cogs.{module}")
+            #except discord.DiscordException as exc:
+               # self.logger.error(f"{type(exc).__name__} occurred when loading {module}: {exc}")
 
         # make sure to only print ready text once
         self._loaded = False
