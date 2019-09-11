@@ -61,7 +61,7 @@ if 'bare' in kwargs.pop('argv'):
                 self.logger.info(f"Bot started in {end_time} seconds")
                 self._loaded = True
         print("Ready!")
-await self.load_extensions()
+                await self.load_extensions()
 
 async def create_browser(self):
             """Task to create browser for scraping purposes."""
