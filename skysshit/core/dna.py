@@ -18,7 +18,7 @@ from skysshit.utils.logging import setup_logger
 #from skysshit.utils.over import send
 
 
-discord.abc.Messageable.send = send
+#discord.abc.Messageable.send = send
 
 
 
