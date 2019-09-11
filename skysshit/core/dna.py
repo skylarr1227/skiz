@@ -20,7 +20,7 @@ from skysshit.utils.logging import setup_logger
 
 #discord.abc.Messageable.send = send
 
-token = os.environ["TOKEN"]
+token = os.environ.get["TOKEN"]
 
 
 class Bot(commands.Bot):
