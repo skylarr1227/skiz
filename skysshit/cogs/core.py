@@ -7,7 +7,7 @@ import discord
 from discord.ext import commands
 from raven import Client
 
-from .core.dna import Bot
+from core.dna import Bot
 from .utils import checks
 
 
