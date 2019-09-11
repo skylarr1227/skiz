@@ -28,7 +28,7 @@ class Bot(commands.Bot):
         self.token = os.environ["TOKEN"]
         #bot.remove_command('help')
         self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
-	self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent": self.http.user_agent})
+    self.session = aiohttp.ClientSession(loop=self.loop,headers={"User-Agent":self.http.user_agent})
         self.browser_page = None
     self.browser = self.loop.create_task(self.create_browser())
        # self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
@@ -60,7 +60,7 @@ if 'bare' in kwargs.pop('argv'):
                 self.description = f"Hello, this is the help menu for {self.user.name}!"
                 self.logger.info(f"Bot started in {end_time} seconds")
                 self._loaded = True
-		print("Ready!")
+        print("Ready!")
 await self.load_extensions()
 
 async def create_browser(self):
