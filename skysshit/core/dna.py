@@ -30,16 +30,16 @@ class Bot(commands.Bot):
         self.token = os.environ["TOKEN"]
         #bot.remove_command('help')
         self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
-    self.session = aiohttp.ClientSession(loop=self.loop,headers={"User-Agent":self.http.user_agent})
-    self.browser_page = None
-    self.browser = self.loop.create_task(self.create_browser())
+        self.session = aiohttp.ClientSession(loop=self.loop,headers={"User-Agent":self.http.user_agent})
+        self.browser_page = None
+        self.browser = self.loop.create_task(self.create_browser())
        # self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
-      #  self.polr = self.config['extras'].get('polr', None)
+       # self.polr = self.config['extras'].get('polr', None)
 #
-self.commands_used = Counter()
-self.commands_used_in = Counter()
-self.errors = deque(maxlen=10)
-self.revisions = None
+        self.commands_used = Counter()
+        self.commands_used_in = Counter()
+        self.errors = deque(maxlen=10)
+        self.revisions = None
 
 discord_logger = setup_logger("discord")
 self.logger = setup_logger("Bot")
