@@ -7,9 +7,9 @@ import itertools
 
 import discord
 from discord.ext.commands import HelpFormatter as HelpF, Paginator, Command
-from bot.utils import polr, privatebin
+from skysshit.utils import polr, privatebin
 
-from bot.utils.args import ArgParseConverter as ArgPC
+from skysshit.utils.args import ArgParseConverter as ArgPC
 
 
 def create_help(cmd, parser):
