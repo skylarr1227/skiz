@@ -31,8 +31,8 @@ class Bot(commands.Bot):
 	       # self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent"=self.http.user_agent)
                 #self.browser_page = None
              #   self.browser = self.loop.create_task(self.create_browser())
-        self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
-        self.polr = self.config['extras'].get('polr', None)
+       # self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
+      #  self.polr = self.config['extras'].get('polr', None)
 #
         self.commands_used = Counter()
         self.commands_used_in = Counter()
