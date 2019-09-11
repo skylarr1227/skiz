@@ -25,6 +25,8 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
 class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(command_prefix="_", *args, **kwargs)
+        self.bot = bot
+        self = self
         self.token = os.environ["TOKEN"]
         #bot.remove_command('help')
         self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
