@@ -20,7 +20,7 @@ from skysshit.utils.logging import setup_logger
 
 #discord.abc.Messageable.send = send
 
-
+token = os.environ["TOKEN"]
 
 
 class Bot(commands.Bot):
@@ -93,6 +93,6 @@ class Bot(commands.Bot):
         async def on_ready(self):
             print("Ready!")
             await self.load_extensions()
-	    token = os.environ["TOKEN"]
+	    
             def run(self):
                 super().run(token)
