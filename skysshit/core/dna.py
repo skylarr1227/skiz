@@ -15,8 +15,7 @@ from pathlib import Path
 from pyppeteer import launch, errors
 
 from skysshit.utils.logging import setup_logger
-import .utils.args
-
+from skysshit.utils.args import ArgParseConverter as ArgPC
 
 #discord.abc.Messageable.send = send
 
