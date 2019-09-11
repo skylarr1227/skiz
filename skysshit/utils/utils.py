@@ -6,7 +6,7 @@ import aiohttp
 import discord
 from discord.ext import commands
 
-from bot.main import Bot
+from core.dna import Bot
 from tabulate import tabulate
 
 # Command converters
