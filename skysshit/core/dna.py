@@ -28,9 +28,9 @@ class Bot(commands.Bot):
         self.token = os.environ["TOKEN"]
         #bot.remove_command('help')
         self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
-	       # self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent"=self.http.user_agent)
-                #self.browser_page = None
-             #   self.browser = self.loop.create_task(self.create_browser())
+	self.session = aiohttp.ClientSession(loop=self.loop, headers={"User-Agent"=self.http.user_agent)
+        self.browser_page = None
+        self.browser = self.loop.create_task(self.create_browser())
        # self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
       #  self.polr = self.config['extras'].get('polr', None)
 #
@@ -43,20 +43,8 @@ class Bot(commands.Bot):
         self.logger = setup_logger("Bot")
         self.command_logger = setup_logger("Commands")
         self.loggers = [discord_logger, self.logger, self.command_logger]
-
+        if 'bare' in kwargs.pop('argv'): 
       
-#  _modules = [mod.stem for mod in Path("skysshit/cogs").glob("*.py")]
-        #self.load_extension(f"skysshit.cogs.core")
-        #self.load_extension(f"skysshit.cogs.owner")
-       # if 'bare' in kwargs.pop('argv'):  # load the bot bare-bones to diagnose issues
-         #   return
-        #for module in _modules:
-          #  try:
-             #   if module in ['core', 'errors']:
-                #    pass
-                #self.load_extension(f"skysshit.cogs.{module}")
-            #except discord.DiscordException as exc:
-               # self.logger.error(f"{type(exc).__name__} occurred when loading {module}: {exc}")
 
         # make sure to only print ready text once
         self._loaded = False
@@ -72,14 +60,14 @@ class Bot(commands.Bot):
                 self.description = f"Hello, this is the help menu for {self.user.name}!"
                 self.logger.info(f"Bot started in {end_time} seconds")
                 self._loaded = True
-        print("Ready!")
-      #  await self.load_extensions()
+		print("Ready!")
+           await self.load_extensions()
 
         async def create_browser(self):
             """Task to create browser for scraping purposes."""
             await self.wait_until_ready()
-            #self.browser = await launch(args=["--no-sandbox"], headless=True)
-            #self.browser_page = await self.browser.newPage()
+            self.browser = await launch(args=["--no-sandbox"], headless=True)
+            self.browser_page = await self.browser.newPage()
             
         async def load_extensions(self):
             for ext in self.skybot_cogs:
@@ -89,9 +77,7 @@ class Bot(commands.Bot):
                 
                 
 
-        async def on_ready(self):
-            print("Ready!")
-            await self.load_extensions()
-	    
+
+        
             def run(self):
                 super().run(self.token)
