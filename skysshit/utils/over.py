@@ -54,7 +54,7 @@ class MyFormatter(HelpFormatter):
         description = self.command.description if not self.is_cog() else inspect.getdoc(self.command)
 
         if description:
-             #<description> portion
+            #<description> portion
             self._paginator.add_line(description, empty=True)
 
         if isinstance(self.command, Command):
@@ -64,7 +64,7 @@ class MyFormatter(HelpFormatter):
             signature = self.get_command_signature()
             self._paginator.add_line(signature, empty=True)
 
-             $<long doc> section
+             #<long doc> section
             if self.command.help:
                 self._paginator.add_line(self.command.help, empty=True)
 
