@@ -1,4 +1,4 @@
-# coding=utf-8tt 55
+# coding=utf-8
 """Overrides for Discord.py classes"""
 import contextlib
 import inspect
