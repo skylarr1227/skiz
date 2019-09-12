@@ -24,6 +24,7 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
 
 class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
+        self.config = kwargs.pop('config')
         super().__init__(command_prefix="_", *args, **kwargs)
         self.bot = bot
         self = self
@@ -41,8 +42,7 @@ class Bot(commands.Bot):
         self.logger = setup_logger("Bot")
         self.command_logger = setup_logger("Commands")
         self.loggers = [discord_logger, self.logger, self.command_logger]
-        if 'bare' in kwargs.pop('argv'): 
-        self.config = kwargs.pop('config')
+        if 'bare' in kwargs.pop('argv'):
         self.commands_used = Counter()
         self.commands_used_in = Counter()
         self.errors = deque(maxlen=10)
