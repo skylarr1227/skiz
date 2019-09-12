@@ -24,7 +24,7 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
 
 class Bot(commands.Bot):
     def __init__(self, *args, **kwargs):
-        self.config = kwargs.pop('config')
+        #self.config = kwargs.pop('config')
         super().__init__(command_prefix="_", *args, **kwargs)
         self.bot = bot
         self = self
