@@ -4,7 +4,7 @@ from discord.ext import commands
 import aiohttp
 from datetime import timedelta
 from random import choice, randint
-import libneko
+#import libneko
 from discord import Embed
 from discord.ext.commands import is_owner
 
