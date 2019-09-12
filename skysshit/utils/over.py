@@ -44,7 +44,7 @@ from skysshit.utils.args import ArgParseConverter as ArgPC
 #  To change the behaviour, this method should be overridden.
 
       #  Returns
-        -------
+       # -------
      #   list
      #       A paginated output of the help command.
       #  """
