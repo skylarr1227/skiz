@@ -6,7 +6,7 @@ import io
 import itertools
 
 import discord
-from discord.ext.commands import Bot, HelpFormatter
+#from discord.ext.commands import Bot, HelpFormatter
 from skysshit.utils import polr, privatebin
 from skysshit.utils.args import ArgParseConverter as ArgPC
 
