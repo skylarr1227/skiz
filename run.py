@@ -6,7 +6,7 @@ import sys
 
 from ruamel import yaml
 
-from skysshit import main
+from skysshit.core import dna
 from skysshit.utils.over import HelpFormatter
 
 if not sys.version_info >= (3, 6):
