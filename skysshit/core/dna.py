@@ -33,20 +33,20 @@ class Bot(commands.Bot):
         self.session = aiohttp.ClientSession(loop=self.loop,headers={"User-Agent":self.http.user_agent})
         self.browser_page = None
         self.browser = self.loop.create_task(self.create_browser())
-       # self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
-       # self.polr = self.config['extras'].get('polr', None)
-#
+        self.priv = self.config['extras'].get('privatebin', 'https://privatebin.net')
+        self.polr = self.config['extras'].get('polr', None)
+        self.config = kwargs.pop('config')
+        self.start_time = time.time()
+        discord_logger = setup_logger("discord")
+        self.logger = setup_logger("Bot")
+        self.command_logger = setup_logger("Commands")
+        self.loggers = [discord_logger, self.logger, self.command_logger]
+        if 'bare' in kwargs.pop('argv'): 
+        self.config = kwargs.pop('config')
         self.commands_used = Counter()
         self.commands_used_in = Counter()
         self.errors = deque(maxlen=10)
         self.revisions = None
-
-discord_logger = setup_logger("discord")
-self.logger = setup_logger("Bot")
-self.command_logger = setup_logger("Commands")
-self.loggers = [discord_logger, self.logger, self.command_logger]
-if 'bare' in kwargs.pop('argv'): 
-      
 
         # make sure to only print ready text once
         self._loaded = False
@@ -83,3 +83,17 @@ async def load_extensions(self):
         
 def run(self):
                 super().run(self.token)
+
+async def close(self):
+        """Function called when closing the bot"""
+        try:
+            await self.browser_page.close() or self.logger.info("Browser page successfully closed!")
+        except (errors.PageError, AttributeError):  # browser was never created; edge case
+            pass
+        await self.browser.close() or self.logger.info("Browser successfully closed!")
+        await super().close()
+        await self.http._session.close()
+        await self.session.close()
+        for logger in self.loggers:
+            for handler in logger.handlers:
+                logger.removeHandler(handler)
