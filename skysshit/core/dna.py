@@ -42,7 +42,7 @@ class Bot(commands.Bot):
         self.logger = setup_logger("Bot")
         self.command_logger = setup_logger("Commands")
         self.loggers = [discord_logger, self.logger, self.command_logger]
-        if 'bare' in kwargs.pop('argv'):
+        #if 'bare' in kwargs.pop('argv'):
         
         self.commands_used = Counter()
         self.commands_used_in = Counter()
