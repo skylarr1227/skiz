@@ -30,7 +30,7 @@ async def _local_check(self, ctx):
         """
         return await self.owner_check(ctx)
 
-    async def __local_check(self, ctx):
+async def __local_check(self, ctx):
         return await self._local_check(ctx)
 
     def __init_subclass__(cls, **kwargs):
