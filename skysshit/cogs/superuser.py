@@ -22,7 +22,10 @@ _logger = logging.getLogger("libneko.extras.superuser")
 
 
 
-class SuperuserCog(bot):
+class SuperuserCog(commands.Cog):
+   def __init__(self, bot):
+        self.bot = bot
+   
    @commands.command(name="exec", aliases=["shell", "eval", "sh"], hidden=True)
    async def execute(self, ctx, *, code):
         """Executes the given code."""
@@ -111,4 +114,4 @@ async def panic(self, ctx):
 
 def setup(bot):
     """Add the cog to the bot directly. Enables this to be loaded as an extension."""
-    bot.add_cog(SuperuserCog())
+    bot.add_cog(SuperuserCog(bot))
