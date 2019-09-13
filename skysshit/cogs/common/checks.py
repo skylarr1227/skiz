@@ -21,7 +21,7 @@ def author_needs(perms):
 
 def is_owner():
     def _(ctx):
-        if ctx.author.id != 86607397321207808:
+        if ctx.author.id != 474104220770107392:
             raise errors.CheckFailure("I don't think you can do that...")
         return True
     return commands.check(_)
