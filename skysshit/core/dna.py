@@ -10,19 +10,19 @@ from discord.ext.commands import is_owner
 
 
 class Bot(commands.Bot):
-	def __init__(self, *args, **kwargs):
-		super().__init__(command_prefix="_", *args, **kwargs)
-		self.token = os.environ["TOKEN"]
-		self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
-	
-	async def load_extensions(self):
-		for ext in self.skybot_cogs:
-			print("Loading %s" % ext)
-			self.load_extension(f"skysshit.cogs.{ext[:-3]}")
-			print("Loaded %s" % exit)
-	async def on_ready(self):
-	        print("Ready!")
-	        await self.load_extensions()
+    def __init__(self, *args, **kwargs):
+        super().__init__(command_prefix="_", *args, **kwargs)
+        self.token = os.environ["TOKEN"]
+        self.skybot_cogs = [ext for ext in os.listdir("skysshit/cogs") if ext.endswith(".py")]
+    
+    async def load_extensions(self):
+        for ext in self.skybot_cogs:
+            print("Loading %s" % ext)
+            self.load_extension(f"skysshit.cogs.{ext[:-3]}")
+            print("Loaded %s" % exit)
+    async def on_ready(self):
+            print("Ready!")
+            await self.load_extensions()
 
         def run(self)
-	        super().run(self.token)
+            super().run(self.token)
