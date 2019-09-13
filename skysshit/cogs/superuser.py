@@ -16,7 +16,7 @@ class SuperuserCog(commands.Cog):
             self.shell = shell
 
     # noinspection PyUnresolvedReferences,PyMethodMayBeStatic
-     async def owner_check(self, ctx):
+async def owner_check(self, ctx):
         """
         """
         return await ctx.bot.is_owner(ctx.author)
