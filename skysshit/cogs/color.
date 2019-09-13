@@ -20,12 +20,12 @@ class Color(commands.Cog):
             await self.bot.edit_role(ctx.message.server, role, color=value)
             logger.info("{}({}) changed the colour of role '{}'".format(
                 author.name, author.id, role.name))
-            await self.bot.say("Fuck yeah, color has been changed!")
+            await ctx.send("Fuck yeah, color has been changed!")
         except discord.Forbidden:
-            await self.bot.say("Um dipshit...I need permissions to manage roles first...")
+            await ctx.send("Um dipshit...I need permissions to manage roles first...")
         except Exception as e:
             print(e)
-            await self.bot.say("Something fucked up... can we do it right next time maybe?") 
+            await ctx.send("Something fucked up... can we do it right next time maybe?") 
 
 
 
