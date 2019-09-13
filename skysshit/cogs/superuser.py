@@ -26,7 +26,7 @@ class SuperuserCog(commands.Cog):
    def __init__(self, bot):
         self.bot = bot
    
-   @commands.command(name="exec", aliases=["shell", "eval", "sh"], hidden=True)
+   @commands.command(name="exec", aliases=["shell", "eval", "sh"], hidden=False)
    async def execute(self, ctx, *, code):
         """Executes the given code."""
 
@@ -98,7 +98,7 @@ class SuperuserCog(commands.Cog):
         await nav.is_ready.wait()
         commands.reinvoke_on_edit(ctx, *nav.all_messages, *additional_messages)
 
-@commands.command(hidden=True)
+@commands.command(hidden=False)
 async def panic(self, ctx):
         """Panic mode. Unloads this cog, specifically."""
         ctx.bot.remove_cog(ctx.cog)
