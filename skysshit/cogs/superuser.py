@@ -33,12 +33,12 @@ async def _local_check(self, ctx):
 async def __local_check(self, ctx):
         return await self._local_check(ctx)
 
-    def __init_subclass__(cls, **kwargs):
+def __init_subclass__(cls, **kwargs):
         mangled_name = f"_{cls.__name__}__local_check"
         setattr(cls, mangled_name, cls._local_check)
 
-    @commands.command(name="exec", aliases=["shell", "eval", "sh"], hidden=True)
-    async def execute(self, ctx, *, code):
+@commands.command(name="exec", aliases=["shell", "eval", "sh"], hidden=True)
+async def execute(self, ctx, *, code):
         """Executes the given code."""
 
         # Removes code blocks if they are present. This then captures the
@@ -109,8 +109,8 @@ async def __local_check(self, ctx):
         await nav.is_ready.wait()
         commands.reinvoke_on_edit(ctx, *nav.all_messages, *additional_messages)
 
-    @commands.command(hidden=True)
-    async def panic(self, ctx):
+@commands.command(hidden=True)
+async def panic(self, ctx):
         """Panic mode. Unloads this cog, specifically."""
         ctx.bot.remove_cog(ctx.cog)
 
@@ -123,6 +123,6 @@ async def __local_check(self, ctx):
 
 
 
-[docs]def setup(bot):
+def setup(bot):
     """Add the cog to the bot directly. Enables this to be loaded as an extension."""
     bot.add_cog(SuperuserCog())
