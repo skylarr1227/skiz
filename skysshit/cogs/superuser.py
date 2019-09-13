@@ -16,7 +16,7 @@ import traceback
 from discord.ext import commands
 from libneko import commands
 from libneko.pag import factory
-
+import discord
 
 _logger = logging.getLogger("libneko.extras.superuser")
 
