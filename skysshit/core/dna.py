@@ -24,5 +24,5 @@ class Bot(commands.Bot):
             print("Ready!")
             await self.load_extensions()
 
-    def run(self)
+    def run(self):
         super().run(self.token)
