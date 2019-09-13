@@ -5,8 +5,8 @@ import textwrap
 
 class Color(commands.Cog):
 
-@commands.command()
-def color(self, ctx, role: discord.Role, value: discord.Colour):
+    @commands.command()
+    def color(self, ctx, role: discord.Role, value: discord.Colour):
         """Edits a role's color
 
         Use double quotes if the role contains spaces.
