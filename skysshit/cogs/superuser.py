@@ -1,5 +1,6 @@
 from libneko.extras import superuser
-
+import discord
+from discord.ext import commands
 
 class WhitelistedOwnerSuperuserCog(superuser.SuperuserCog):
     
