@@ -22,7 +22,7 @@ _logger = logging.getLogger("libneko.extras.superuser")
 
 
 
-class SuperuserCog:
+class SuperuserCog(bot):
    @commands.command(name="exec", aliases=["shell", "eval", "sh"], hidden=True)
    async def execute(self, ctx, *, code):
         """Executes the given code."""
