@@ -1,6 +1,24 @@
 from libneko.extras import superuser
 import discord
 from discord.ext import commands
+import ast
+import asyncio
+import collections
+import contextlib
+import copy
+import importlib
+import io
+import logging
+import os
+import pprint
+import re
+import shutil
+import sys
+import time
+import traceback
+
+from libneko import commands
+from libneko.pag import factory
 
 class SuperuserCog(commands.Cog):
     # noinspection PyUnresolvedReferences
