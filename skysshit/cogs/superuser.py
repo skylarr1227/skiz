@@ -4,28 +4,7 @@ from discord.ext import commands
 
 class SuperuserCog(commands.Cog):
     # noinspection PyUnresolvedReferences
-    """
-    Parameters:
-        shell: The default shell to use. If not overridden, it will use the best shell as
-            determined for the target platform. If ``None``, then the shell is disabled.
-            Otherwise, it should be an absolute path to an executable, or an executable that
-            is accessible via the ``$PATH`` variable.
-
-    Note:
-        This includes a command called ``panic`` which removes this command
-        from the bot until it is reloaded again.
-
-        >>> [you] %panic
-        >>> [bot] Exec cog has been deactivated.
-
-    Warning:
-        This cog poses an inherent security risk on your bot if not implemented correctly.
-        It relies on Discord IDs always being valid and never spoofed. If compromised,
-        the attacker is able to execute any arbitrary code on your host. Depending on the bot's
-        system user account permissions, this could be used to perform potentially devastating
-        raid attacks and system compromise. **Use at your own risk.**
-    """
-
+    """"""
     def __init__(self, *, shell=...):
         if shell is ...:
             self.shell = os.getenv(
@@ -39,25 +18,6 @@ class SuperuserCog(commands.Cog):
     # noinspection PyUnresolvedReferences,PyMethodMayBeStatic
 [docs]    async def owner_check(self, ctx):
         """
-        Checks the owner is valid. If no owner is set, it should immediately fail.
-
-        This defaults to ensuring an owner is the owner of the bot account.
-
-        This class can be inherited, and you can override this method to do basically
-        what the hell you want to though... take the following example that demonstrates
-        using a hard-coded list of members to allow access to this cog::
-
-            >>> from libneko.extras import superuser
-
-            >>> class WhitelistedOwnerSuperuserCog(superuser.SuperuserCog):
-            ...
-            ...     owners = [1856271517491511531, 4325824835683126527, 21512642468346835632]
-            ...     async def owner_check(self, ctx):
-            ...         return ctx.author.id in self.owners
-            ...
-
-            >>> bot.add_cog(WhitelistedOwnerSuperuserCog())
-
         """
         return await ctx.bot.is_owner(ctx.author)
 
