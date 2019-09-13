@@ -13,7 +13,7 @@ import shutil
 import sys
 import time
 import traceback
-
+from discord.ext import commands
 from libneko import commands
 from libneko.pag import factory
 
