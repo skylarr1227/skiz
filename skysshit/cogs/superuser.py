@@ -8,4 +8,4 @@ class WhitelistedOwnerSuperuserCog(superuser.SuperuserCog):
     return ctx.author.id in self.owners
     
     
-bot.add_cog(WhitelistedOwnerSuperuserCog())
+    bot.add_cog(WhitelistedOwnerSuperuserCog())
