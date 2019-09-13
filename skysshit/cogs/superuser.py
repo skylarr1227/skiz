@@ -2,7 +2,7 @@ from libneko.extras import superuser
 import discord
 from discord.ext import commands
 
-class SuperuserCog(commands.Cog)
+class SuperuserCog(commands.Cog):
     # noinspection PyUnresolvedReferences
     """
     Parameters:
