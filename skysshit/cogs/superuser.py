@@ -111,4 +111,4 @@ async def panic(self, ctx):
 
 def setup(bot):
     """Add the cog to the bot directly. Enables this to be loaded as an extension."""
-    bot.add_cog(SuperuserCog(bot))
+    bot.add_cog(SuperuserCog())
