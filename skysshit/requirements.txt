@@ -1,1 +1,9 @@
-# put your requirements
+aiofiles
+aiohttp
+async-timeout
+asynctest
+coverage
+docutils
+requests
+urllib3
+websockets
