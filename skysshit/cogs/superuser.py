@@ -217,7 +217,7 @@ def scrub(content):
 
 
 
-class SuperuserCog:
+class SuperuserCog(Cog):
     # noinspection PyUnresolvedReferences
     """
     Parameters:
