@@ -41,7 +41,7 @@ class Skybot(commands.Cog):
             info=info.split(',')
             info.append('-')
             if infostuff[1]=="-":
-            stuff=ctx.author.avatar_url
+                stuff=ctx.author.avatar_url
             elif infostuff[1].isdigit()==True: "or discord.Member"
                 stuff=infostuff[1].avatar.url
             """embed stuff where url=stuff"""
