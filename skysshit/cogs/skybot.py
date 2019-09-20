@@ -40,7 +40,7 @@ class Skybot(commands.Cog):
             infostuff=infostuff.replace(" ",",")
             info=info.split(',')
             info.append('-')
-            if infostuff[1]+="-":
+            if infostuff[1]=="-":
                 stuff=ctx.author.avatar_url
             elif infostuff[1].isdigit()==True: "or discord.Member"
                 stuff=infostuff[1].avatar.url
