@@ -19,7 +19,7 @@ class Events(commands.Cog):
         if message.author == client.user:
             return
 
-        if message.content.startswith('>avatar'):
+        if message.content.startswith('_av'):
             if len(message.mentions) > 0:
                 images = ''
                 for user in message.mentions:
