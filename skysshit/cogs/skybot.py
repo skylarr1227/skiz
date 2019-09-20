@@ -15,10 +15,6 @@ class Skybot(commands.Cog):
         #    embed = discord.Embed(colour=0xbfff00, description=page)
         #    embed.set_image(url=plancan_gif)
         #    return embed
-	
-        @commands.command()
-
-
 
         @commands.command()
         async def skybot(self, ctx):
