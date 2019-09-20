@@ -1,0 +1,16 @@
+PlanCan Gym Event\n
+There will be 3 stages or 'regions' of gyms set up here\n
+Each with there own rules and layouts which are listed here.\n
+Each region will showcase 4 to 5 gyms.\n
+
+
+Rules & Information\n
+  -Asphodel and Jotunheim Gyms leaders will have no Legendary or mega limit\n 
+this is to set a hard challenge up for everyone.\n
+  -Zerzura legendary/mega limit is a combination of upto 3 legendaries or megas\n
+
+Note\n
+All other mewbot original server gym rules apply\n
+Including banned pokemon and item combinations\n 
+which can all be found in #mewbot-gym-rules\n
+Make Sure you check the #mewbot-gym-rules first before challenging.\n
