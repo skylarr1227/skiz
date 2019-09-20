@@ -20,7 +20,7 @@ class Skybot(commands.Cog):
         @commands.command()
         async def plancan(self, ctx):
             """Rules and information regarding PlanCan"""
-            nav = pag.EmbedNavigatorFactory(max_lines=10)
+            nav = pag.EmbedNavigatorFactory(factory=plancan_embed, max_lines=10)
             nav += plancan
             nav.start(ctx)
 
