@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 
+client = discord.Client()
+
+
 class Events(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -13,11 +16,20 @@ class Events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-        if (message.mentions.__len__()>0):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('>avatar'):
+        if len(message.mentions) > 0:
+            images = ''
             for user in message.mentions:
-                embed = discord.Embed(title="Users Avatar", description="Mentioned users Avatar", color=0x0084FD)
-                embed.set_image(url=user.avatar_url)
-                await ctx.send(embed=embed)
+                images += str(user.avatar_url) + str('\n')
+            await message.channel.send(images)
+        else:
+            await message.channel.send(message.author.avatar_url)
+
+
+
 
 def setup(bot):
     bot.add_cog(Events(bot))
