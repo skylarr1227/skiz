@@ -9,7 +9,7 @@ class Skybot(commands.Cog):
 	
         @commands.command()
         async def skybot(self, ctx):
-        """A quick and organized help menu for Skybot"""
+            """A quick and organized help menu for Skybot"""
             nav = pag.EmbedNavigatorFactory(max_lines=10)
             nav += dummy_text
             nav.start(ctx)
