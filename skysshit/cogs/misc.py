@@ -47,9 +47,9 @@ async def embed_command(self, ctx):
 	def check(ms):
             # Look for the message sent in the same channel where the command was used
             # As well as by the user who used the command.
-	return ms.channel == ctx.message.channel and ms.author == ctx.message.author
+		return ms.channel == ctx.message.channel and ms.author == ctx.message.author
             # First ask the user for the title
-	await ctx.send(content='What would you like the title to be?')
+		await ctx.send(content='What would you like the title to be?')
        	    # Wait for a response and get the title
 	msg = await self.bot.wait_for('message', check=check)
 	title = msg.content # Set the title
