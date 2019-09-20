@@ -32,36 +32,20 @@ class Skybot(commands.Cog):
             nav += plancan
             nav.start(ctx)
 
-        @commands.command(aliases=["playerstats", "player", "userinfo", "userstats", "user"])
-        async def playerinfo(self, ctx, *, user: discord.Member = None):
-            """
-            Gives you player info on a user. If a user isn't passed then the shown info is yours.
-            """
-            if not user:
-                user = ctx.author
-
-            roles = [role.name.replace("@", "@\u200b") for role in user.roles]
-            share = sum(1 for m in self.bot.get_all_members() if m.id == user.id)
-            voice_channel = user.voice
-            if voice_channel is not None:
-                voice_channel = voice_channel.channel.name
-            else:
-                voice_channel = "Not in a voice channel."
-
-            msg = [
-                ("Name", user.name), ("Discrim", user.discriminator),
-                ("ID", user.id),
-                ("Display Name", user.display_name),
-                ("Joined at", user.joined_at),
-                ("Created at", user.created_at),
-                ("Server Roles", ", ".join(roles)),
-                ("Color", user.color),
-                ("Status", user.status),
-                ("Servers Shared", share),
-                ("Avatar URL", user.avatar_url)
-            ]
-
-            await ctx.send()
+        @commands.command(name='info' , aliases=["i"])
+        async def info(self, ctx,):   
+            infostuff=ctx.message
+            infostuff=str(infostuff.content)
+            infostuff=infostuff.replace(-info  ","")
+            infostuff=infostuff.replace(" ",",")
+            info=info.split(',')
+            info.append('-')
+            if infostuff[1]+="-":
+                stuff=ctx.author.avatar_url
+            elif infostuff[1].isdigit()==True: "or discord.Member"
+                stuff=infostuff[1].avatar.url
+            """embed stuff where url=stuff"""
+            await ct.send(embed=embed)
 
 
 def setup(bot):
