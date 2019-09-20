@@ -16,17 +16,17 @@ class Events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
-    if message.author == client.user:
-        return
+        if message.author == client.user:
+            return
 
-    if message.content.startswith('>avatar'):
-        if len(message.mentions) > 0:
-            images = ''
-            for user in message.mentions:
-                images += str(user.avatar_url) + str('\n')
-            await message.channel.send(images)
-        else:
-            await message.channel.send(message.author.avatar_url)
+        if message.content.startswith('>avatar'):
+            if len(message.mentions) > 0:
+                images = ''
+                for user in message.mentions:
+                    images += str(user.avatar_url) + str('\n')
+                await message.channel.send(images)
+            else:
+                await message.channel.send(message.author.avatar_url)
 
 
 
