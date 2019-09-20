@@ -10,11 +10,11 @@ plancan_gif = 'http://157.245.8.88:8000/55ef51a74f091dad52a9bca3bccfb6cb.png'
 
 class Skybot(commands.Cog):
 
-        @pag.embed_generator(max_chars=2048)
-        def plancan_embed(paginator, page, page_index):
-            embed = discord.Embed(colour=0xbfff00, description=page)
-            embed.set_image(url=plancan_gif)
-            return embed
+        #@pag.embed_generator(max_chars=2048)
+        #def plancan_embed(paginator, page, page_index):
+        #    embed = discord.Embed(colour=0xbfff00, description=page)
+        #    embed.set_image(url=plancan_gif)
+        #    return embed
 	
         @commands.command()
         async def skybot(self, ctx):
@@ -26,7 +26,7 @@ class Skybot(commands.Cog):
         @commands.command()
         async def plancan(self, ctx):
             """Rules and information regarding PlanCan"""
-            nav = pag.EmbedNavigatorFactory(factory=plancan_embed, max_lines=10)
+            nav = pag.EmbedNavigatorFactory(max_lines=10)
             nav += plancan
             nav.start(ctx)
 
