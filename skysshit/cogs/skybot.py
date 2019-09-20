@@ -22,8 +22,8 @@ class Skybot(commands.Cog):
         async def plancan(self, ctx):
             """Rules and information regarding PlanCan"""
             def plancan_embed(paginator, page, page_index):
-            embed = discord.Embed(colour=0xbfff00, description=page)
-            embed.set_image(url=plancan_gif)
+                embed = discord.Embed(colour=0xbfff00, description=page)
+                embed.set_image(url=plancan_gif)
             return embed
             nav = pag.EmbedNavigatorFactory(max_lines=10)
             nav += plancan
