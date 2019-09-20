@@ -45,7 +45,7 @@ class Skybot(commands.Cog):
             elif infostuff[1].isdigit()==True: "or discord.Member"
             stuff=infostuff[1].avatar.url
             """embed stuff where url=stuff"""
-            await ct.send(embed=embed)
+            await ctx.send(embed=embed)
 
 
 def setup(bot):
