@@ -36,7 +36,7 @@ class Skybot(commands.Cog):
         async def info(self, ctx,):   
             infostuff=ctx.message
             infostuff=str(infostuff.content)
-            infostuff=infostuff.replace(-info  ","")
+            infostuff=infostuff.replace(-info  ",")
             infostuff=infostuff.replace(" ",",")
             info=info.split(',')
             info.append('-')
