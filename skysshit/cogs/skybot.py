@@ -17,6 +17,10 @@ class Skybot(commands.Cog):
         #    return embed
 	
         @commands.command()
+
+
+
+        @commands.command()
         async def skybot(self, ctx):
             """A quick and organized help menu for Skybot"""
             nav = pag.EmbedNavigatorFactory(max_lines=10)
@@ -30,6 +34,38 @@ class Skybot(commands.Cog):
             nav += plancan
             nav.start(ctx)
 
+        @commands.command(aliases=["playerstats", "player", "userinfo", "userstats", "user"])
+        async def playerinfo(self, ctx, *, user: discord.Member = None):
+            """
+            Gives you player info on a user. If a user isn't passed then the shown info is yours.
+            """
+            if not user:
+                user = ctx.author
+
+            roles = [role.name.replace("@", "@\u200b") for role in user.roles]
+            share = sum(1 for m in self.bot.get_all_members() if m.id == user.id)
+            voice_channel = user.voice
+            if voice_channel is not None:
+                voice_channel = voice_channel.channel.name
+            else:
+                voice_channel = "Not in a voice channel."
+
+            msg = [
+                ("Name", user.name), ("Discrim", user.discriminator),
+                ("ID", user.id),
+                ("Display Name", user.display_name),
+                ("Joined at", user.joined_at),
+                ("Created at", user.created_at),
+                ("Server Roles", ", ".join(roles)),
+                ("Color", user.color),
+                ("Status", user.status),
+                ("Game", user.game),
+                ("Voice Channel", voice_channel),
+                ("Servers Shared", share),
+                ("Avatar URL", user.avatar_url)
+            ]
+
+            await ctx.send()
 
 
 def setup(bot):
