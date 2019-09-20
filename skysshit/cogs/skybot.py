@@ -67,4 +67,4 @@ class Skybot(commands.Cog):
 
 
 def setup(bot):
-        bot.add_cog(Skybot())
+        bot.add_cog(Skybot(bot))
