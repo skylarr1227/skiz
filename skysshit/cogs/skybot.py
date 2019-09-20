@@ -10,7 +10,8 @@ with open('skysshit/cogs/plancan.txt') as file1:
 plancan_gif = 'http://157.245.8.88:8000/55ef51a74f091dad52a9bca3bccfb6cb.png'
 
 class Skybot(commands.Cog):
-
+        def __init__(self, bot):
+            self.bot = bot
         #@pag.embed_generator(max_chars=2048)
         #def plancan_embed(paginator, page, page_index):
         #    embed = discord.Embed(colour=0xbfff00, description=page)
