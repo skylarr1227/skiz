@@ -18,16 +18,17 @@ class Skybot(commands.Cog):
             nav.start(ctx)
 
         @commands.command()
-        @pag.embed_generator(max_chars=2048)
         async def plancan(self, ctx):
             """Rules and information regarding PlanCan"""
-            def plancan_embed(paginator, page, page_index):
-                embed = discord.Embed(colour=0xbfff00, description=page)
-                embed.set_image(url=plancan_gif)
-            return embed
             nav = pag.EmbedNavigatorFactory(max_lines=10)
             nav += plancan
             nav.start(ctx)
+
+        @pag.embed_generator(max_chars=2048)
+        def plancan_embed(paginator, page, page_index):
+            embed = discord.Embed(colour=0xbfff00, description=page)
+            embed.set_image(url=plancan_gif)
+            return embed
 
 
 def setup(bot):
