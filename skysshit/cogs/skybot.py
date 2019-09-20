@@ -38,7 +38,7 @@ class Skybot(commands.Cog):
             infostuff=str(infostuff.content)
             infostuff=infostuff.replace("-info","")
             infostuff=infostuff.replace(" ",",")
-            info=info.split(',')
+            #info=info.split(',')
             info.append('-')
             if infostuff[1]=="-":
                 stuff=ctx.author.avatar_url
