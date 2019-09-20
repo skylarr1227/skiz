@@ -13,7 +13,7 @@ class Events(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         if (message.mentions.__len__()>0):
-    for user in message.mentions:
+        for user in message.mentions:
         print(user.avatar_url)
 
 def setup(bot):
