@@ -1,7 +1,7 @@
 from discord.ext import commands
 from libneko import pag
 
-with open('dummy-text.txt') as fp:
+with open('skysshit/cogs/dummy-text.txt') as fp:
     dummy_text = fp.read()
 
 
