@@ -32,8 +32,8 @@ class Skybot(commands.Cog):
             nav += plancan
             nav.start(ctx)
 
-        @commands.command(name='info' , aliases=["i"])
-        async def info(self, ctx,):   
+        @commands.command(name='infos' , aliases=["i"])
+        async def infos(self, ctx,):   
             infostuff=ctx.message
             infostuff=str(infostuff.content)
             infostuff=infostuff.replace("-info","")
