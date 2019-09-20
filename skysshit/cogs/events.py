@@ -14,7 +14,7 @@ class Events(commands.Cog):
     async def on_message(self, message):
         if (message.mentions.__len__()>0):
             for user in message.mentions:
-            print(user.avatar_url)
+                print(user.avatar_url)
 
 def setup(bot):
     bot.add_cog(Events(bot))
