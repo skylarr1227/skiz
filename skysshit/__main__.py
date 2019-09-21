@@ -1,4 +1,5 @@
 # Bruh
+from .core.dna import Bot
 import sys
 import asyncio
 import skysshit.permissions as permissions
