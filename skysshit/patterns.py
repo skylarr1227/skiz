@@ -7,10 +7,10 @@ import re
 import discord
 from discord.ext import commands
 
-import utils.util as util
-import utils.texttools as texttools
-from utils.rand import *
-from utils.attack import Attack
+import skysshit.utils.util as util
+import skysshit.utils.texttools as texttools
+from skysshit.utils.rand import *
+from skysshit.utils.attack import Attack
 
 '''
 This file is a bit of a mess, but what happens here is that the bot will scan all messages
