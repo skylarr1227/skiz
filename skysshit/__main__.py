@@ -1,23 +1,58 @@
 # Bruh
+import sys
+import asyncio
+import permissions
+import patterns
+import utils.util as util
 import discord
-from .utils import checks
-from .core.dna import Bot
+from configparser import ConfigParser
+from discord.ext import commands
+from pipes.processor import PipelineProcessor
 
-client = discord.Client()
+
+bot = commands.Bot(command_prefix=command_prefix)
+command_prefix = config['BOT']['prefix'] 
+pipe_prefix = config['BOT']['pipe_prefix']
+patterns = patterns.Patterns(bot)
+pipeProcessor = PipelineProcessor(bot, pipe_prefix)
 
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
+@bot.event
+async def on_message(message):    
+    if message.author.id == bot.user.id:
+        return
+    
+    if permissions.is_muted(message.author.id):
+        return
+    
+    if message.author.bot:
         return
 
-    if message.content.startswith('avatar'):
-        if len(message.mentions) > 0:
-            images = ''
-            for user in message.mentions:
-                images += str(user.avatar_url) + str('\n')
-            await message.channel.send(images)
-        else:
-            await message.channel.send(message.author.avatar_url)
+    # Try for text pipes, if it's a pipe, don't look for anything else.
+    if await pipeProcessor.process_script(message):
+        return
+
+    # Try for patterns if it doesn't look like a command
+    if(message.content[:len(command_prefix)] != command_prefix):
+        await pipeProcessor.on_message(message)
+        await patterns.process_patterns(message)
+    # Try for commands
+    await bot.process_commands(message)
+
+
+@bot.event
+async def on_command_error(ctx, error):
+    print('')
+    if isinstance(error, commands.NoPrivateMessage):
+        await ctx.author.send('Wow, don't say another word to me that is simply not okay in private.')
+    elif isinstance(error, commands.DisabledCommand):
+        await ctx.author.send('Sorry motherfucker. This command is fucking disabled, jokes on you.')
+    elif isinstance(error, commands.CommandInvokeError):
+        print('In {0.command.qualified_name}:'.format(ctx), file=sys.stderr)
+        # traceback.print_tb(error.original.__traceback__)
+        print('{0.__class__.__name__}: {0}'.format(error.original), file=sys.stderr)
+    else:
+        print('Command Error:', error)
+
 
 Bot().run()
