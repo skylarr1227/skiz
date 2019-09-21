@@ -54,7 +54,7 @@ async def on_command_error(ctx, error):
     else:
         print('Command Error:', error)
 
-6
+
     if __name__ == '__main__':    
         bot.load_extension('pipes.pipecommands')
         bot.load_extension('pipes.macrocommands')
