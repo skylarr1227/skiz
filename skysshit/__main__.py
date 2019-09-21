@@ -44,7 +44,7 @@ async def on_message(message):
 async def on_command_error(ctx, error):
     print('')
     if isinstance(error, commands.NoPrivateMessage):
-        await ctx.author.send('Wow, don't say another word to me that is simply not okay in private.')
+        await ctx.author.send('Wow, dont say another word to me that is simply not okay in private.')
     elif isinstance(error, commands.DisabledCommand):
         await ctx.author.send('Sorry motherfucker. This command is fucking disabled, jokes on you.')
     elif isinstance(error, commands.CommandInvokeError):
@@ -54,7 +54,7 @@ async def on_command_error(ctx, error):
     else:
         print('Command Error:', error)
 
-
+6
     if __name__ == '__main__':    
         bot.load_extension('pipes.pipecommands')
         bot.load_extension('pipes.macrocommands')
