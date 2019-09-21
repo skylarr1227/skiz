@@ -1,7 +1,7 @@
 # Bruh
 import sys
 import asyncio
-import permissions
+import .permissions
 import patterns
 import utils.util as util
 import discord
