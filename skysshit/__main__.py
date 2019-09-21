@@ -3,8 +3,8 @@ from .core.dna import Bot
 import sys
 import asyncio
 import skysshit.permissions as permissions
-import patterns
-import utils.util as util
+import skysshit.patterns as patterns
+import skysshit.utils.util as util
 import discord
 from configparser import ConfigParser
 from discord.ext import commands
