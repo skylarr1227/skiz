@@ -1,1 +1,1 @@
-# discord-template-with-cogs
+__oh yeahhhh__ Sky's Work-In-Progress
